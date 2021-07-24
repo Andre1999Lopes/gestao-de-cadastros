@@ -17,23 +17,25 @@ const globalStyle = createGlobalStyle`
 		padding: 0;
 	}
 
+	* {
+			@font-face {
+				font-family: 'Quicksand';
+				src: url(${fontUrl});
+			}
+
+			@media (min-width: 1920px) {
+				font-size: 150%;
+			}
+
+			@media (min-width: 3840px) {
+				font-size: 250%;
+			}
+		}
+
 	body {
 		color: white;
 		height: 100vh;
 		background-color: #3e474c;
-
-		@font-face {
-			font-family: 'Quicksand';
-			src: url(${fontUrl});
-		}
-
-		@media (min-width: 1920px) {
-			font-size: 150%;
-		}
-
-		@media (min-width: 3180px) {
-			font-size: 250%;
-		}
 	}
 
 	.App {
