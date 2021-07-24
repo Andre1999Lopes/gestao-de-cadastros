@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import GlobalStyle from './theme/globalStyle';
+import Sidebar from './components/Sidebar';
+import Clients from './pages/Clients';
+import Products from './pages/Products';
+import LocalStorage from './services/LocalStorage';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export enum Screen {
+	CLIENTS,
+	PRODUCTS
+}
+
+function App():JSX.Element {
+	const [currentScreen, setCurrentScreen] = useState(Screen.CLIENTS);
+
+	useEffect(() => {
+		localStorage.clear();
+		LocalStorage.setInitialLocalStorage();
+	}, []);
+
+	const handleClick = (screen:Screen) => {
+		setCurrentScreen(screen);
+	};
+
+	return (
+		<>
+			<GlobalStyle />
+			<div className="App">
+				<Sidebar handleClick={handleClick} />
+				{currentScreen === Screen.CLIENTS && <Clients />}
+				{currentScreen === Screen.PRODUCTS && <Products />}
+			</div>
+		</>
+	);
 }
 
 export default App;
