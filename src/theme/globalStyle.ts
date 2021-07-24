@@ -21,9 +21,18 @@ const globalStyle = createGlobalStyle`
 		color: white;
 		height: 100vh;
 		background-color: #3e474c;
+
 		@font-face {
 			font-family: 'Quicksand';
 			src: url(${fontUrl});
+		}
+
+		@media (min-width: 1920px) {
+			font-size: 150%;
+		}
+
+		@media (min-width: 3180px) {
+			font-size: 250%;
 		}
 	}
 
