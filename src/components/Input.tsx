@@ -9,6 +9,7 @@ const StyledInput = styled.input`
 	border-radius: 10px;
 	background-color: #e1e1e1;
 	outline: none;
+	transition: background-color 100ms linear;
 
 	&::-webkit-outer-spin-button,
 	&::-webkit-inner-spin-button {
