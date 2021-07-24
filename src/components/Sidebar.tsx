@@ -75,6 +75,7 @@ export default function Sidebar({ handleClick }:IProps):JSX.Element {
 			<Ul style={{
 				position: 'absolute',
 				bottom: 0,
+				width: '100%',
 				borderTop: '1px solid #ffffff66',
 				flexDirection: 'row'
 			}}>

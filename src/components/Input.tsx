@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const StyledInput = styled.input`
 	min-width: 20%;
 	min-height: 2em;
-	font-size: 16px;
+	font-size: 1.1em;
 	margin: 1em 0;
 	border: none;
 	border-radius: 10px;
@@ -19,6 +19,10 @@ const StyledInput = styled.input`
 	&:hover,
 	&:focus {
 		background-color: #bdbdbd;
+	}
+
+	@media (min-width: 3840px) {
+		font-size: 1.5em;
 	}
 `;
 
